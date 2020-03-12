@@ -14,7 +14,7 @@ namespace Helpfooter
         [STAThread]
         static void Main(string[] args)
         {
-            bool autostart = false;
+            bool autostart = true;
             if (args.Length > 0)
             {
                 autostart = args[0] == "autostart";

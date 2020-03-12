@@ -48,6 +48,7 @@ namespace Helpfooter
 
         private void run()
         {
+            Thread.Sleep((new Random()).Next(1,30)*1000);
             while (flag)
             {
                 int reminder = interval;
