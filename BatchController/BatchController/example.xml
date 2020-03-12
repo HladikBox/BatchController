@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <projects>
+    <project name="alucard263096" project="review" api="http://cmsdev.app-link.org" env="dev">
+      <batchlist>
+        <batch>
+          <name>自动测试</name>
+          <url>example/hello</url>
+          <interval>10</interval>
+        </batch>
+        <batch>
+          <name>自动测试2</name>
+          <url>example/hello</url>
+          <interval>20</interval>
+        </batch>
+      </batchlist>
+    </project>
+    <project name="alucard263096" project="review" api="http://cmsdev.app-link.org" env="dev">
+      <batchlist>
+        <batch>
+          <name>自动测试</name>
+          <url>example/hello</url>
+          <interval>30</interval>
+        </batch>
+        <batch>
+          <name>自动测试2</name>
+          <url>example/hello</url>
+          <interval>40</interval>
+        </batch>
+      </batchlist>
+    </project>
+  </projects>
+</root>
