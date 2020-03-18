@@ -63,16 +63,24 @@ namespace Helpfooter
                     this.ctrl.pgbP.Value = interval - reminder;
                     if (reminder == 0)
                     {
-                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                        request.Method = "GET";
-                        request.Accept = "text/html, application/xhtml+xml, */*";
-                        request.ContentType = "application/json";
-
-                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                        using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+                        try
                         {
-                            string ret= reader.ReadToEnd();
-                            this.ctrl.txtResult.Text = ret;
+
+                            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                            request.Method = "GET";
+                            request.Accept = "text/html, application/xhtml+xml, */*";
+                            request.ContentType = "application/json";
+
+                            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+                            {
+                                string ret = reader.ReadToEnd();
+                                this.ctrl.txtResult.Text = ret;
+                            }
+                        }
+                        catch(Exception ex) {
+
+                            this.ctrl.txtResult.Text = ex.ToString();
                         }
                     }
                 }
